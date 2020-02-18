@@ -53,3 +53,13 @@ The price data is queried from IEX through API calls.
 Display currency of the app can be changed here.
 
 **Important** => all the assets should be created with the same display currency setting as this value will be saved to the asset and calculations will be performed depending on it. This feature serves only display purposes.
+
+## Screenshots
+
+Example data created with test user for displaying purpose.
+
+![screenshot1](./screenshots/screen1.png)
+![screenshot2](./screenshots/screen.png)
+![screenshot3](./screenshots/screen.png)
+![screenshot4](./screenshots/screen.png)
+![screenshot5](./screenshots/screen.png)
