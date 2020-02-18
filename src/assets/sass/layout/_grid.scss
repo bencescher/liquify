@@ -1,0 +1,98 @@
+.row {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 114rem;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+[class^="col"] {
+  float: left;
+}
+
+[class^="col2"]:not(:nth-child(2n+0)) {
+  margin-right: 5rem;
+}
+
+[class^="col3"]:not(:nth-child(3n+0)) {
+  margin-right: 5rem;
+}
+
+[class^="col4"]:not(:nth-child(4n+0)) {
+  margin-right: 5rem;
+
+  @include res(tabland) {
+    margin-right: 0;
+  }
+}
+
+[class^="col4"]:not(:nth-child(3n+0)) {
+
+  @include res(tabland) {
+    margin-right: 5rem;
+  }
+
+  @include res(tabport) {
+    margin-right: 0;
+  }
+}
+
+[class^="col4"]:not(:nth-child(2n+0)) {
+
+  @include res(tabport) {
+    margin-right: 5rem;
+  }
+}
+
+.col2-1 {
+  width: calc((100% - 5rem) / 2);
+
+  @include res(tabport) {
+    width: 100%;
+  }
+}
+
+.col3-1 {
+  width: calc((100% - 5rem * 2) / 3);
+}
+
+.col3-2 {
+  width: calc(((100% - 5rem * 2) / 3) * 2 + 5rem);
+
+  @include res(tabport) {
+    width: 100%;
+  }
+}
+
+.col4-1 {
+  width: calc((100% - 5rem * 3) / 4);
+
+  @include res(tabland) {
+    width: calc((100% - 5rem * 2) / 3);
+  }
+
+  @include res(tabport) {
+    width: calc((100% - 5rem) / 2);
+  }
+
+  @include res(phone) {
+    width: 100%;
+  }
+}
+
+.col4-2 {
+  width: calc(((100% - 5rem * 3) / 4) * 2 + 5rem);
+}
+
+.col4-3 {
+  width: calc(((100% - 5rem * 3) / 4) * 3 + 5rem * 2);
+}

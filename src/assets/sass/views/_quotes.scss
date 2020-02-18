@@ -1,0 +1,47 @@
+.quotes {
+
+  .col3-2 {
+    float: none;
+    margin: 0 auto;
+  }
+
+  & .btn {
+    margin-left: 2rem;
+    padding: 1rem;
+  }
+
+  &__box {
+    border: 1px solid $c-green-light;
+    border-radius: $n-borderrad;
+    height: 12rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+    width: 36rem;
+  
+    & p {
+      color: $c-green;
+      font-size: 3rem;
+      padding: 3.5rem;
+    }
+  }
+}
+
+.quote-select {
+  background-color: rgba(255, 255, 255, .65);
+  border-radius: $n-borderrad;
+  box-sizing: border-box;
+  color: $c-gray;
+  font-size: 1.8rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.reference {
+
+  & a {
+    color: $c-gray;
+    text-decoration: none;
+  }
+}

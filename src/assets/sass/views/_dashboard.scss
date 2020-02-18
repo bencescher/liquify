@@ -1,0 +1,70 @@
+.dash-item {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  @include res(tabport) {
+    max-width: 75%;
+  }
+
+  @include res(phone) {
+    max-width: 100%;
+  }
+}
+
+.asset-list {
+  padding-left: 0;
+
+  & p {
+    font-size: 1.8rem;
+    padding-bottom: 1rem;
+    transition: all .2s;
+  }
+
+  & li {
+    list-style-type: none;
+    margin: .5rem;
+    padding: 1rem;
+    border-radius: $n-borderrad;
+  }
+
+  & .health-danger, & .health-ok {
+    color: #fff;
+    padding: 1.5rem;
+    transition: all .2s;
+
+    & p {
+      padding-top: .5rem;
+    }
+  }
+}
+
+.mychart {
+  margin: 0 auto;
+}
+
+.right {
+  color: #fff;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.left {
+  color: #fff;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.health-danger {
+  background-image: linear-gradient(to right bottom, rgba($c-red, .5), rgba($c-red, .85));
+}
+
+.health-danger:hover p, .health-ok:hover p {
+  letter-spacing: .1rem;
+}
+
+.health-ok {
+  background-image: linear-gradient(to right bottom, rgba($c-green, .5), rgba($c-green, .85));
+}

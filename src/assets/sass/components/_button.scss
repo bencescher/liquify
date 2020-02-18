@@ -1,0 +1,112 @@
+.btn {
+
+  &, &:link, &:visited {
+    border: none;
+    border-radius: $n-borderrad;
+    color: $c-gray;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 1.6rem 3.6rem;
+    position: relative;
+    text-decoration: none;
+    transition: all .2s;
+  }
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba($c-shadow,0.2);
+    transform: translateY(-3px);
+
+    &::after {
+      opacity: 0;
+      transform: scaleX(1.4) scaleY(1.6);
+    }
+  }
+
+  &:active, &:focus {
+    box-shadow: 0 5px 10px rgba($c-shadow,0.2);
+    outline: none;
+    transform: translateY(-1px);
+  }
+
+  &::after {
+    border-radius: $n-borderrad;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+  &--green {
+
+    &, &:link, &:visited {
+      background-color: rgba($c-green-light, .8);
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: rgba($c-green-light, 1);
+      box-shadow: 0 10px 20px rgba($c-shadow,0.2);
+    }
+    
+    &::after {
+      background-color: rgba($c-green-light, .6);
+    }
+  }
+
+  &--blue {
+    &, &:link, &:visited {
+      background-color: rgba($c-blue-light, .8);
+      color: #fff;
+    }
+    
+    &:hover {
+      background-color: $c-blue-light;
+    }
+    
+    &::after {
+      background-color: rgba($c-blue-light, .6);
+    }
+  }
+
+  &--white {
+    &, &:link, &:visited {
+      background-color: rgba(255, 255, 255, .8);
+    }
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+    
+    &::after {
+      background-color: rgba(255, 255, 255, .6);
+    }
+  }
+
+  &--red {
+    &, &:link, &:visited {
+      background-color: rgba($c-red, .8);
+      color: #fff;
+    }
+    
+    &:hover {
+      background-color: $c-red;
+    }
+    
+    &::after {
+      background-color: rgba($c-red, .6);
+    }
+  }
+
+  &--inline {
+
+    &:nth-child(1) {
+      margin-right: 2rem;
+    }
+  }
+}

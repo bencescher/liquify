@@ -1,0 +1,18 @@
+.currency-heading {
+  color: $c-gray;
+  padding-bottom: 2.5rem;
+  padding-top: 1rem;
+}
+
+.currency-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.currency-list li {
+  display: inline;
+}
+
+.currency-list li:not(:nth-child(1)) {
+  margin-left: 3rem;
+}

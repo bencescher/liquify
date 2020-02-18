@@ -1,0 +1,138 @@
+.container-formbox {
+  background-image: linear-gradient(to right top, $c-green-light, $c-blue-light);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.container-formbox .ribbon {
+  background: transparent;
+
+  @include res(tabport) {
+    padding-bottom: 6rem;
+  }
+
+  @include res(phone) {
+    padding-bottom: 10rem;
+  }
+}
+
+.formbox {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, .9) 55%, transparent 55%), url("@/../../images/hero.jpg");
+  background-size: cover;
+  border-radius: $n-borderrad;
+  box-shadow: 0 1.5rem 4rem rgba($c-shadow, .15);
+  min-height: 45rem;
+  margin: 0 auto;
+  max-width: 80rem;
+
+  @include res(tabport) {
+    background-image:
+    linear-gradient(105deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)),
+    url("@/../../images/hero.jpg") !important;
+    max-width: 60rem;
+  }
+}
+
+.formbox__form {
+  color: $c-gray;
+  padding: 2rem 6rem;
+  text-align: left;
+  width: 50%;
+
+  @include res(tabport) {
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  & .btn--cancel {
+    margin-left: 3rem;
+  }
+}
+
+.form {
+
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__label {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    transition: all .3s;
+
+    &--select {
+      display: inline;
+    }
+  }
+
+  &__input {
+    background-color: rgba(255, 255, 255, .65);
+    border: none;
+    border-bottom: 3px solid transparent;
+    border-radius: $n-borderrad;
+    color: inherit;
+    display: block;
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    transition: all .3s;
+    width: 60%;
+
+    @include res(tabport) {
+      margin: 0 auto;
+      text-align: center;
+      width: 36%;
+    }
+  
+    &:focus {
+      border-bottom: 3px solid rgba($c-green-light, .6);
+      box-shadow: 0 1rem 2rem rgba($c-shadow, .1);
+      outline: none;
+  
+      &:invalid {
+        border-bottom: 3px solid rgba($c-red, .6);
+      }
+    }
+  
+    &::-webkit-input-placeholder {
+      color: rgba($c-shadow, .5);
+    }
+  }
+
+  &__select {
+    background-color: rgba(255, 255, 255, .65);
+    border: none;
+    border-radius: $n-borderrad;
+    box-sizing: border-box;
+    color: inherit;
+    display: inline;
+    font-size: 1.5rem;
+    padding: 4px;
+  
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    transform: translateY(-4rem);
+    visibility: hidden;
+  }
+}
+
+.form-heading {
+  color: $c-gray;
+  font-weight: 700;
+  padding: 3rem;
+  padding-left: 0;
+}
+
+#label-base, #label-account, #label-type {
+  opacity: 0;
+  transition: all .3s;
+}

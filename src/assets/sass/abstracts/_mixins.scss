@@ -1,0 +1,21 @@
+/*
+
+MEDIA QUERIES
+
+0-600px --> phone (mobile phone)
+601-900px --> tabport (tablet portrait)
+901-1200px --> tabland (tablet landscape)
+1201- --> (normal screen)
+*/
+
+@mixin res($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { @content };
+  }
+  @if $breakpoint == tabport {
+    @media (max-width: 56.25em) { @content };
+  }
+  @if $breakpoint == tabland {
+    @media (max-width: 75em) { @content };
+  }
+}
