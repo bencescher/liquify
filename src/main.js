@@ -8,17 +8,18 @@ import './assets/css/all.css'
 
 Vue.config.productionTip = false
 
+// vue filter for currency format
 Vue.filter('currency-format', (value)=> {
   return value.toFixed().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 })
 
-//Setting up nav guards
+// nav guards
 router.beforeEach((to, from, next)=> {
-  //Check for requiredAuth guards
+  // check for requiresAuth guards
   if(to.matched.some(record=> record.meta.requiresAuth)) {
-    //Check if NOT logged in
+    // check if no user is logged in
     if(!firebase.auth().currentUser) {
-      //Go to Login
+      // go to Login
       next({
         path: '/login',
         query: {
@@ -31,8 +32,9 @@ router.beforeEach((to, from, next)=> {
     }
   }
   else if (to.matched.some(record=> record.meta.requiresGuest)) {
-    //Check if logged in
+    // check if a user is logged in
     if(firebase.auth().currentUser) {
+      // go to root
       next({
         path: '/',
         query: {
@@ -50,7 +52,6 @@ router.beforeEach((to, from, next)=> {
 })
 
 let app
-
 firebase.auth().onAuthStateChanged(() => {
   if (!app) {
     new Vue({

@@ -17,7 +17,7 @@ const mutations = {
       })
       .catch(err => alert(err.message))
   },
-  //Update the base currency in the database and in the state
+  // update the base currency in the database and in the state
   'UPDATE_CURRENCY' (state, newCurrency) {
     db.collection('currency').doc('base').update({ name: newCurrency })
       .then(() => {

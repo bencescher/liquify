@@ -40,11 +40,13 @@
     },
     watch: {
       currency: function() {
+        // reload assets on change
         this.$store.dispatch('initAssets')
       }
     },
     methods: {
        changeCurrency(newValue) {
+         // update currency setting in the database
          this.$store.dispatch('updateCurrency',newValue)
        }
     }

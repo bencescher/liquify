@@ -106,7 +106,7 @@
     },
     methods: {
       onSubmit() {
-        // adding newAsset to the database, reload assets, reroute to 'My assets' view
+        // add newAsset to the database, reload assets, reroute to 'My assets' view
         this.newAsset.owner = this.currentUser
         this.$store.dispatch('createAsset', this.newAsset)
           .then(() => {

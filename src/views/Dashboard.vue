@@ -136,13 +136,13 @@
             chfAmount = 0,
             gbpAmount = 0
 
-        // Getting the assets from 'assets' and cumulating the prices grouped by types
+        // get the assets from 'assets' and cumulate the prices grouped by types
         this.assets.forEach(asset => {
           const assetPrice = asset.price
           const assetType = asset.type
           const assetBase = asset.base
 
-          // Cumulating assets based by their types
+          // cumulate assets based by their types
           switch (assetType) {
             case 'Cryptocurrency':
               cryptoAmount += assetPrice
@@ -163,7 +163,7 @@
               break;
           }
 
-          // Cumulating the assets by their base currency
+          // cumulate the assets by their base currency
           switch (assetBase) {
             case 'HUF':
               hufAmount += assetPrice
@@ -185,7 +185,7 @@
           }
         })
         
-        // Display settings for the 'Assets by type' section
+        // display settings for the 'Assets by type' section
         this.categories = [
           { name: 'Currency', amount: currencyAmount, bg: 'linear-gradient(105deg, rgba(47, 133, 90, .55) 0%,rgba(47, 133, 90, .45) 60%, rgba(47, 133, 90, .85) 30%, rgba(47, 133, 90, .75) 100%)'},
           { name: 'ETF', amount: etfAmount, bg: 'linear-gradient(105deg, rgba(40, 60, 134, .55) 0%,rgba(40, 60, 134, .45) 60%, rgba(40, 60, 134, .85) 30%, rgba(40, 60, 134, .75) 100%)'},
@@ -193,7 +193,7 @@
           { name: 'Bond', amount: bondAmount, bg: 'linear-gradient(105deg, rgba(241, 39, 17, .55) 0%,rgba(241, 39, 17, .45) 60%, rgba(241, 39, 17, .85) 30%, rgba(241, 39, 17, .75) 100%)'},
           { name: 'Crypto', amount: cryptoAmount, bg: 'linear-gradient(105deg, rgba(2, 170, 176, .55) 0%,rgba(2, 170, 176, .45) 60%, rgba(2, 170, 176, .85) 30%, rgba(2, 170, 176, .75) 100%)'}
         ]
-        // Display settings for the 'Asset ratios' section
+        // display settings for the 'Asset ratios' section
         this.datacollection = {
           datasets: [{
             data: [currencyAmount.toFixed(2), cryptoAmount.toFixed(2), etfAmount.toFixed(2), stockAmount.toFixed(2), bondAmount.toFixed(2)],
@@ -207,7 +207,7 @@
               'Bond'
           ]
         }
-        // Display settings for portfolio health
+        // display settings for portfolio health
         this.calculateHealth(currencyAmount, cryptoAmount, etfAmount, stockAmount, bondAmount, hufAmount, eurAmount, usdAmount, chfAmount, gbpAmount)
 
       },

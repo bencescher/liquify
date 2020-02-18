@@ -61,7 +61,7 @@
         let queryString = ''
 
         this.quote = 0
-        // querying stock quotes
+        // query stock quotes
         if (stocks.includes(symbol)) {
           queryString = 'https://sandbox.iexapis.com/stable/stock/' + symbol + '/quote/latestPrice?token=' + process.env.VUE_APP_IEX_TOKEN
         }

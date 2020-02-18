@@ -6,6 +6,7 @@ MEDIA QUERIES
 601-900px --> tabport (tablet portrait)
 901-1200px --> tabland (tablet landscape)
 1201- --> (normal screen)
+
 */
 
 @mixin res($breakpoint) {

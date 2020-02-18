@@ -43,7 +43,7 @@ const mutations = {
                   assetData.id = doc.id
                   state.totalOriginal += parseInt(assetData.originalprice)
 
-                  // defining current price based on currency settings and quantity
+                  // define current price based on currency settings and quantity
                   if (assetData.base === baseCurrency) {
                     assetData.price = parseInt(assetData.quantity)
                     state.total += assetData.price
@@ -56,7 +56,7 @@ const mutations = {
                     } else {
                       rateQuery = assetData.base
                     } 
-                    // reading the corresponding exchange rate
+                    // read the corresponding exchange rate
                     db.collection('rates').doc(rateQuery).get()
                       .then(exchangeRate => {
                         // convert stock quote to display currency in case it is not 'USD'
@@ -69,7 +69,7 @@ const mutations = {
                               state.assets.push(assetData)
                             })
                         } else {
-                          // if asset type is not stock
+                          // if asset type is not 'stock'
                           assetData.price = assetData.quantity * exchangeRate.data().rate
                           state.total += assetData.price
                           updateLastprice(assetData)

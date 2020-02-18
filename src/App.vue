@@ -17,6 +17,7 @@ export default {
   },
   created() {
     if(firebase.auth().currentUser) {
+      // load currency settings and assets
       this.$store.dispatch('initCurrency')
       this.$store.dispatch('initAssets')
     }
