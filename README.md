@@ -59,7 +59,7 @@ Display currency of the app can be changed here.
 Example data created with test user for displaying purpose.
 
 ![screenshot1](./screenshots/screen1.png)
-![screenshot2](./screenshots/screen.png)
-![screenshot3](./screenshots/screen.png)
-![screenshot4](./screenshots/screen.png)
-![screenshot5](./screenshots/screen.png)
+![screenshot2](./screenshots/screen2.png)
+![screenshot3](./screenshots/screen3.png)
+![screenshot4](./screenshots/screen4.png)
+![screenshot5](./screenshots/screen5.png)
