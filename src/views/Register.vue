@@ -27,7 +27,7 @@
 </template>
 
 <script>
-  import firebaseApp from '../firebase/init.js'
+  import firebase from 'firebase'
 
   export default {
     data() {
@@ -38,7 +38,7 @@
     },
     methods: {
       register() {
-        firebaseApp.auth().createUserWithEmailAndPassword(this.email, this.password)
+        firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
           .then(user => {
             alert('Account created for ' + user.user.email + '. You will now be redirected to your dashboard.')
             this.$router.go({ path: this.$router.path })
